@@ -12,18 +12,18 @@ class Seo
     {
         $this->optimizer = new Optimizer();
         $this->optimizer->openGraph(
-            'Paulo Coelho Advogado',
+            'Paulo Coelho Advogado - Home',
             'pt_BR',
             'article'
         )->twitterCard(
-            "",
-            "",
-            "",
+            "teste",
+            "teste",
+            "teste",
         )->publisher(
-            "",
-            ""
+            "teste",
+            "teste"
         )->facebook(
-            ""
+            "teste"
         );
     }
 
