@@ -13,7 +13,7 @@ class Seo
         $this->optimizer = new Optimizer();
         $this->optimizer->openGraph(
             env('APP_NAME'),
-            'pt-BR',
+            'pt_BR',
             'article'
         )->twitterCard(
             env('CLIENT_SOCIAL_TWITTER_CREATOR'),
@@ -27,7 +27,7 @@ class Seo
         );
     }
 
-    public function render($title, $description, $url, $image, bool $follow = true)
+    public function render(string $title, string $description, string $url, string $image, bool $follow = true)
     {
         return $this->optimizer->optimize($title, $description, $url, $image, $follow)->render();
     }
