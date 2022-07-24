@@ -16,14 +16,14 @@ class Seo
             'pt_BR',
             'article'
         )->twitterCard(
-            env('CLIENT_SOCIAL_TWITTER_CREATOR'),
-            env('CLIENT_SOCIAL_TWITTER_PUBLISHER'),
-            env('APP_URL'),
+            "",
+            "",
+            "",
         )->publisher(
-            env('CLIENT_SOCIAL_FACEBOOK_PAGE'),
-            env('CLIENT_SOCIAL_FACEBOOK_AUTHOR')
+            "",
+            ""
         )->facebook(
-            env('CLIENT_SOCIAL_FACEBOOK_PAGE')
+            ""
         );
     }
 
