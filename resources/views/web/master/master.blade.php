@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <meta charset="utf-8">
-    <title>Advogado Paulo Coelho</title>
+    {!! $head ?? '' !!}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{url(asset('frontend/css/style.css'))}}">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@100;300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('frontend/images/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('frontend/images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('frontend/images/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('frontend/images/site.webmanifest') }}">
     <style>:where(body, iframe, pre, img, svg, video, canvas, select) {
   max-width: 100%;
   word-break: break-word;
@@ -36,7 +40,7 @@
       <div class="l-header__navbar">
         <div class="navbar-inner">
           <div class="navbar-inner-logo">
-            <a href="./" title="Advogado Paulo Coelho">
+            <a href="{{route('web.home')}}" title="Advogado Paulo Coelho">
               <img src="{{url(asset('frontend/images/logo.svg'))}}" alt="Advogado
               Paulo Coelho" title="Advogado Paulo Coelho">
             </a>
@@ -48,7 +52,7 @@
             </button>
             <ul class="menu-mobile" id="menu-mobile">
               <li>
-                <a href="" title="Home">Home</a>
+                <a href="{{route('web.home')}}" title="Home">Home</a>
               </li>
               <li>
                 <a href="" title="Sobre">Sobre</a>
@@ -62,7 +66,7 @@
             </ul>
           </nav>
           <nav class="navbar-inner-nav">
-            <a class="active">Home</a>
+            <a href="{{route('web.home')}}" class="active">Home</a>
             <a href="" title="">Sobre</a>
             <a href="" title="">Áreas</a>
             <a href="" title="">Artigos</a>

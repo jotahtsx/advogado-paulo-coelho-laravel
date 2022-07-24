@@ -9,6 +9,9 @@ class WebController extends Controller
 {
     public function home()
     {
-        return view('web.home');
+        $head = $this->seo->render('Advogado Paulo Coelho || Página Inicial', 'descrição', 'https://google.com', '', '');
+        return view('web.home', [
+            'head' => $head
+        ]);
     }
 }
