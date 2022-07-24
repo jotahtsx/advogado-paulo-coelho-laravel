@@ -12,7 +12,7 @@ class Seo
     {
         $this->optimizer = new Optimizer();
         $this->optimizer->openGraph(
-            env('APP_NAME'),
+            'Paulo Coelho Advogado',
             'pt_BR',
             'article'
         )->twitterCard(
