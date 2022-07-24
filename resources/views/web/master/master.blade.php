@@ -13,13 +13,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('frontend/images/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('frontend/images/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('frontend/images/site.webmanifest') }}">
-    <style>:where(body, iframe, pre, img, svg, video, canvas, select) {
-  max-width: 100%;
-  word-break: break-word;
-  overflow: auto;
-}
-
-</style>
+    <style>
+        :where(body, iframe, pre, img, svg, video, canvas, select) {
+            max-width: 100%;
+            word-break: break-word;
+            overflow: auto;
+        }
+    </style>
   </head>
 
   <body>
