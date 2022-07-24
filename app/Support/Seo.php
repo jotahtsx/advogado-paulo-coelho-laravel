@@ -27,7 +27,7 @@ class Seo
         );
     }
 
-    public function render(string $title, string $description, string $url, string $image, bool $follow = true)
+    public function render($title, $description, $url, $image, bool $follow = true)
     {
         return $this->optimizer->optimize($title, $description, $url, $image, $follow)->render();
     }
