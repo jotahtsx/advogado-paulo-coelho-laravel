@@ -55,10 +55,10 @@
                 <a href="{{route('web.home')}}" title="Home">Home</a>
               </li>
               <li>
-                <a href="" title="Sobre">Sobre</a>
+                <a href="{{route('web.about')}}" title="Sobre">Sobre</a>
               </li>
               <li>
-                <a href="" title="Áreas">Áreas</a>
+                <a href="#services" title="Áreas">Áreas</a>
               </li>
               <li>
                 <a href="" title="Contato">Contato</a>
@@ -66,11 +66,11 @@
             </ul>
           </nav>
           <nav class="navbar-inner-nav">
-            <a href="{{route('web.home')}}" class="active">Home</a>
-            <a href="" title="">Sobre</a>
+            <a href="{{route('web.home')}}" class="{{isActive('web.home')}}">Home</a>
+            <a href="{{route('web.about')}}" class="{{isActive('web.about')}}" title="Sobre">Sobre</a>
             <a href="" title="">Áreas</a>
             <a href="" title="">Artigos</a>
-            <a href="" title="">Contato</a>
+            <a href="{{route('web.contact')}}" class="{{isActive('web.contact')}}" title="Contato">Contato</a>
           </nav>
           <nav class="navbar-inner-social">
             <a class="navbar-inner-social-icon" href="" title="Facebook">
