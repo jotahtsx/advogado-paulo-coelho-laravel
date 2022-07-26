@@ -14,12 +14,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('frontend/images/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('frontend/images/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('frontend/images/site.webmanifest') }}">
-
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
 
 <body class="hold-transition login-page">
+
+    <div class="ajax_response"></div>
+
     <div class="login-box">
         <div class="login-logo">
             <a href=""><b>Paulo</b>Coelho</a>
@@ -31,7 +34,7 @@
 
                 <form name="login" action="{{ route('admin.login.do') }}" method="post" autocomplete="off">
                     <div class="input-group mb-3">
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -58,6 +61,7 @@
     </div>
 
     <script src="{{ url(asset('backend/plugins/jquery/jquery.min.js')) }}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="{{ url(asset('backend/js/login.js')) }}"></script>
 </body>
 

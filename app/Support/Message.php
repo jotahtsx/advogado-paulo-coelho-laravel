@@ -24,13 +24,6 @@ class Message
         return $this;
     }
 
-    public function success(string $message): Message
-    {
-        $this->type = 'error';
-        $this->text = $message;
-        return $this;
-    }
-
     public function render()
     {
         return "<div class='message {$this->getType()}'>{$this->getText()}</div>";

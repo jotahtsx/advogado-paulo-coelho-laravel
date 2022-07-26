@@ -20,7 +20,11 @@ $(function () {
                 console.log(response);
 
                 if (response.message) {
-                    alert("Mensagem de erro: " + response.message);
+                    toastr.error(response.message);
+                }
+
+                if (response.redirect) {
+                    window.location.href = response.redirect;
                 }
             },
             "json"
