@@ -2,7 +2,6 @@
 
 namespace PauloCoelho\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use PauloCoelho\Http\Controllers\Controller;
 use PauloCoelho\Http\Requests\Admin\User as UserRequest;
 use PauloCoelho\User;
@@ -16,7 +15,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index');
+        $users = User::all();
+        return view('admin.users.index', [
+            'users' => $users
+        ]);
     }
 
     /**
@@ -39,7 +41,11 @@ class UserController extends Controller
     {
         $userCreate = User::create($request->all());
 
-        var_dump($userCreate);
+        $userCreate->save();
+
+        return redirect()->route('admin.usuarios.edit', [
+            'users' => $userCreate->id
+        ])->with(['color' => 'success', 'message' => 'Usuário cadastrado com sucesso.']);
     }
 
     /**
@@ -61,7 +67,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::where('id', $id)->first();
+        return view('admin.users.edit', [
+            'user' => $user
+        ]);
     }
 
     /**
@@ -71,9 +80,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
-        //
+        $user = User::where('id', $id)->first();
+
+        $user->fill($request->all());
+
+        if (!$user->save()) {
+            return redirect()->back()->withInput()->withErrors();
+        }
+
+        return redirect()->route('admin.usuarios.edit', [
+            'users' => $user->id
+        ])->with(['color' => 'success', 'message' => 'Usuário atualizado com sucesso.']);
     }
 
     /**

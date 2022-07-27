@@ -26,7 +26,7 @@ class User extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:191',
-            'email' => 'required|email|unique:users',
+            'email' => (!empty($this->request->all()['id']) ? 'required|email|unique:users,email,' . $this->request->all()['id'] : 'required|email|unique:users,email'),
             'date_of_birth' => 'required|date_format:d/m/Y'
         ];
     }

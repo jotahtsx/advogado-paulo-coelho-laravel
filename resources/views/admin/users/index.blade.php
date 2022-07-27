@@ -21,17 +21,29 @@
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
+                                <th width="50">#</th>
                                 <th>Nome Completo</th>
                                 <th>Email</th>
                                 <th width="200">Data de Nascimento</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Trident</td>
-                                <td>Win 95+</td>
-                                <td>X</td>
-                            </tr>
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td>{{ $user->id }}</td>
+                                    <td>
+                                        <a href="{{ route('admin.usuarios.edit', ['user' => $user->id]) }}">
+                                            {{ $user->name }}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="mailto: {{ $user->email }}">
+                                            {{ $user->email }}
+                                        </a>
+                                    </td>
+                                    <td>{{ $user->date_of_birth }}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -42,6 +42,11 @@ class User extends Authenticatable
         $this->attributes['date_of_birth'] = $this->convertStringToDate($value);
     }
 
+    public function getDateOfBirthAttribute($value)
+    {
+        return date('d/m/Y', strtotime($value));
+    }
+
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
