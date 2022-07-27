@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'date_of_birth',
     ];
 
     /**
@@ -36,4 +36,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function setDateOfBirthAttribute($value)
+    {
+        $this->attributes['date_of_birth'] = $this->convertStringToDate($value);
+    }
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
+    private function convertStringToDate(string $param)
+    {
+        if (empty($param)) {
+            return null;
+        }
+
+        list($day, $month, $year) = explode('/', $param);
+        return (new \DateTime($year . '-' . $month . '-' . $day))->format('Y-m-d');
+    }
 }

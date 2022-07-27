@@ -55,24 +55,18 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                            <a href="{{ route('admin.home') }}" class="nav-link {{ isActive('admin.home') }}">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Widgets
-                                    <span class="right badge badge-danger">New</span>
+                                    Visão Geral
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../iframe.html" class="nav-link">
-                                <i class="nav-icon fas fa-ellipsis-h"></i>
-                                <p>Tabbed IFrame Plugin</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
-                                <p>Documentation</p>
+                            <a href="{{ route('admin.usuarios.index') }}"
+                                class="nav-link {{ isActive('admin.usuarios') }}">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>Usuários</p>
                             </a>
                         </li>
                     </ul>
@@ -81,38 +75,16 @@
         </aside>
 
         <div class="content-wrapper">
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>Blank Page</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Blank Page</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div><!-- /.container-fluid -->
-            </section>
-
-            <!-- Main content -->
-            <section class="content">
-
-                @yield('content')
-
-            </section>
-            <!-- /.content -->
+            @yield('content')
         </div>
-        <!-- /.content-wrapper -->
     </div>
-    <!-- ./wrapper -->
 
 
     <script src="{{ url(asset('backend/plugins/jquery/jquery.min.js')) }}"></script>
     <script src="{{ url(asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js')) }}"></script>
+    <script src="{{ url(asset('backend/plugins/jquery.mask.js')) }}"></script>
     <script src="{{ url(asset('backend/js/adminlte.min.js')) }}"></script>
+    <script src="{{ url(asset('backend/js/scripts.js')) }}"></script>
 </body>
 
 </html>
