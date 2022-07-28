@@ -19,6 +19,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
         Route::resource('usuarios', 'UserController');
 
         Route::resource('sliders', 'SliderController');
+
+        Route::resource('faq', 'FaqController');
     });
 
     Route::get('sair', 'AuthController@logout')->name('logout');

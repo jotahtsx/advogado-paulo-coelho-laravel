@@ -85,7 +85,7 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SliderRequest $request, $id)
     {
         $slider = Slider::where('id', $id)->first();
 

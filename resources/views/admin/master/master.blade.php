@@ -78,6 +78,12 @@
                                 <p>Sliders</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.faq.index') }}" class="nav-link {{ isActive('admin.faq') }}">
+                                <i class="nav-icon fas fa-info"></i>
+                                <p>FAQ</p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
