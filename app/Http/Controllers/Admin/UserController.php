@@ -87,7 +87,7 @@ class UserController extends Controller
         $user->fill($request->all());
 
         if (!$user->save()) {
-            return redirect()->back()->withInput()->withErrors();
+            return redirect()->back()->withInput();
         }
 
         return redirect()->route('admin.usuarios.edit', [

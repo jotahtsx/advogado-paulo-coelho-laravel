@@ -172,7 +172,8 @@ return [
         'title' => 'título',
         'username' => 'usuário',
         'year' => 'ano',
-        'date_of_birth' => 'data de nascimento'
+        'date_of_birth' => 'data de nascimento',
+        'content' => 'conteúdo'
     ],
 
 ];

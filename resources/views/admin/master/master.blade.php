@@ -14,6 +14,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('backend/img/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('backend/img/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('backend/img/site.webmanifest') }}">
+    <link rel="stylesheet" href="{{ asset('backend/plugins/summernote/summernote-bs4.min.css') }}">
+
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -69,6 +71,13 @@
                                 <p>Usuários</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.sliders.index') }}"
+                                class="nav-link {{ isActive('admin.sliders') }}">
+                                <i class="nav-icon fas fa-images"></i>
+                                <p>Sliders</p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -83,6 +92,7 @@
     <script src="{{ url(asset('backend/plugins/jquery/jquery.min.js')) }}"></script>
     <script src="{{ url(asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js')) }}"></script>
     <script src="{{ url(asset('backend/plugins/jquery.mask.js')) }}"></script>
+    <script src="{{ url(asset('backend/plugins/summernote/summernote-bs4.min.js')) }}"></script>
     <script src="{{ url(asset('backend/js/adminlte.min.js')) }}"></script>
     <script src="{{ url(asset('backend/js/scripts.js')) }}"></script>
 </body>

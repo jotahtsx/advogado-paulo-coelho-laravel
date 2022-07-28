@@ -17,6 +17,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
         Route::get('home', 'AuthController@home')->name('home');
 
         Route::resource('usuarios', 'UserController');
+
+        Route::resource('sliders', 'SliderController');
     });
 
     Route::get('sair', 'AuthController@logout')->name('logout');
