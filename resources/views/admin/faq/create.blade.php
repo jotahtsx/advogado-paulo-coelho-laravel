@@ -32,8 +32,9 @@
                                 placeholder="Digite o título da questão" value="{{ old('title') }}">
                         </div>
                         <div class="form-group">
-                            <label for="content">Conteúdo da questão</label>
-                            <textarea name="content" id="content" class="form-control" value="{{ old('content') }}">{{ old('content') }}</textarea>
+                            <label for="faqContent">Conteúdo da questão</label>
+                            <input type="content" class="form-control" name="content" id="faqContent"
+                                placeholder="Digite o conteúdo da questão" value="{{ old('content') }}">
                         </div>
                         <button type="submit" class="btn btn-success">Realizar cadastro</button>
                     </form>

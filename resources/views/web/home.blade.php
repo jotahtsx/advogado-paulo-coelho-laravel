@@ -6,11 +6,11 @@
             <h2>Atualizações</h2>
             @if ($sliders->count())
                 @foreach ($sliders as $slider)
-                    <article class="swiper-slide" style="background-image: url({{ url('frontend/images/slider.jpg') }})">
+                    <article class="swiper-slide" style="background: url({{ Storage::url($slider->cover) }})">
                         <div class="swiper-slide-inner">
                             <div>
                                 {!! $slider->content !!}
-                                <a href="{{ route('web.about') }}" title="">Saiba mais</a>
+                                <a href="{{ route('web.about') }}" title="Saiba mais">Saiba mais</a>
                             </div>
                         </div>
                     </article>
@@ -88,43 +88,20 @@
             <div class="pattern"></div>
             <div class="inner">
                 <h2>Perguntas frequentes.</h2>
-                <div class="faq-section section-hide">
-                    <div class="faq-title" onclick="clickAccordion(0)">
-                        <h3>Quanto tempo dura uma ação de despejo?</h3>
-                        <img src="{{ url(asset('frontend/images/faq-icon.svg')) }}" alt="" title=""
-                            class="faq-icon">
-                    </div>
-                    <p class="hide">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        Eligendi, non cupiditate, necessitatibus magni deserunt voluptas
-                        explicabo dolores alias esse officiis ex. Rerum sit eum sed,
-                        quia doloremque aliquid dolorum necessitatibus!
-                    </p>
-                </div>
-                <div class="faq-section section-hide">
-                    <div class="faq-title" onclick="clickAccordion(1)">
-                        <h3>Como faço para me tornar empresário?</h3>
-                        <img src="{{ url(asset('frontend/images/faq-icon.svg')) }}" alt="" title=""
-                            class="faq-icon">
-                    </div>
-                    <p class="hide">Conteúdo da seção</p>
-                </div>
-                <div class="faq-section section-hide">
-                    <div class="faq-title" onclick="clickAccordion(2)">
-                        <h3>Quanto tempo demora uma processo trabalhista?</h3>
-                        <img src="{{ url(asset('frontend/images/faq-icon.svg')) }}" alt="" title=""
-                            class="faq-icon">
-                    </div>
-                    <p class="hide">Conteúdo da seção</p>
-                </div>
-                <div class="faq-section section-hide">
-                    <div class="faq-title" onclick="clickAccordion(3)">
-                        <h3>Quais as formas de pagamento?</h3>
-                        <img src="{{ url(asset('frontend/images/faq-icon.svg')) }}" alt="" title=""
-                            class="faq-icon">
-                    </div>
-                    <p class="hide">Conteúdo da seção</p>
-                </div>
+                @if ($questions->count())
+                    @foreach ($questions as $question)
+                        <div class="faq-section section-hide">
+                            <div class="faq-title" onclick="clickAccordion(0)">
+                                <h3>{{ $question->title }}</h3>
+                                <img src="{{ url(asset('frontend/images/faq-icon.svg')) }}" alt="{{ $question->title }}"
+                                    title="{{ $question->title }}" class="faq-icon">
+                            </div>
+                            <p class="hide">
+                                {!! $question->content !!}
+                            </p>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
         <div class="l-main__contact">

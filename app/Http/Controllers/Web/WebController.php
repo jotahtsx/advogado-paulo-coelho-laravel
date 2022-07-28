@@ -3,6 +3,7 @@
 namespace PauloCoelho\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
+use PauloCoelho\Faq;
 use PauloCoelho\Http\Controllers\Controller;
 use PauloCoelho\Slider;
 
@@ -11,11 +12,13 @@ class WebController extends Controller
     public function home()
     {
         $sliders = Slider::limit(3)->get();
+        $questions = Faq::limit(4)->get();
 
         $head = $this->seo->render('Advogado Paulo Coelho | Página Inicial', 'descrição', 'https://google.com', '', '');
         return view('web.home', [
             'head' => $head,
-            'sliders' => $sliders
+            'sliders' => $sliders,
+            'questions' => $questions
         ]);
     }
 
