@@ -7,7 +7,7 @@
             @if ($sliders->count())
                 @foreach ($sliders as $slider)
                     <article class="swiper-slide"
-                        style="background: url({{ '~advogado' . '../..' . Storage::url($slider->cover) }})">
+                        style="background: url({{ '~advogado/public/' . Storage::url($slider->cover) }})">
                         <div class="swiper-slide-inner">
                             <div>
                                 {!! $slider->content !!}
