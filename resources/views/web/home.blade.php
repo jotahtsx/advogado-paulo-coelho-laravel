@@ -6,7 +6,8 @@
             <h2>Atualizações</h2>
             @if ($sliders->count())
                 @foreach ($sliders as $slider)
-                    <article class="swiper-slide" style="background: url({{ '' . '../..' . Storage::url($slider->cover) }})">
+                    <article class="swiper-slide"
+                        style="background: url({{ '~advogado' . '../..' . Storage::url($slider->cover) }})">
                         <div class="swiper-slide-inner">
                             <div>
                                 {!! $slider->content !!}
