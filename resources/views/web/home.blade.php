@@ -4,42 +4,18 @@
     <div class="swiper">
         <section class="swiper-wrapper">
             <h2>Atualizações</h2>
-            <article class="swiper-slide" style="background-image: url({{ url('frontend/images/slider.jpg') }})">
-                <div class="swiper-slide-inner">
-                    <div>
-                        <h3>
-                            Eficiência<br>
-                            com experiência<br>
-                            e seriedade.
-                        </h3>
-                        <a href="" title="">Saiba mais</a>
-                    </div>
-                </div>
-            </article>
-            <article class="swiper-slide" style="background-image: url({{ url('frontend/images/slider.jpg') }})">
-                <div class="swiper-slide-inner">
-                    <div>
-                        <h3>
-                            Eficiência<br>
-                            com experiência<br>
-                            e seriedade.
-                        </h3>
-                        <a href="" title="">Saiba mais</a>
-                    </div>
-                </div>
-            </article>
-            <article class="swiper-slide" style="background-image: url({{ url('frontend/images/slider.jpg') }})">
-                <div class="swiper-slide-inner">
-                    <div>
-                        <h3>
-                            Eficiência<br>
-                            com experiência<br>
-                            e seriedade.
-                        </h3>
-                        <a href="" title="">Saiba mais</a>
-                    </div>
-                </div>
-            </article>
+            @if ($sliders->count())
+                @foreach ($sliders as $slider)
+                    <article class="swiper-slide" style="background-image: url({{ url('frontend/images/slider.jpg') }})">
+                        <div class="swiper-slide-inner">
+                            <div>
+                                {!! $slider->content !!}
+                                <a href="{{ route('web.about') }}" title="">Saiba mais</a>
+                            </div>
+                        </div>
+                    </article>
+                @endforeach
+            @endif
         </section>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
@@ -94,8 +70,8 @@
                 </a>
                 <a href="" title="Dívidas Rurais" class="item">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-warehouse"
-                        width="44" height="44" viewbox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
-                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        width="44" height="44" viewbox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <path d="M3 21v-13l9 -4l9 4v13"></path>
                         <path d="M13 13h4v8h-10v-6h6"></path>
